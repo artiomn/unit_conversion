@@ -4,12 +4,12 @@
 
 #ifndef TEXT_H
 #define TEXT_H
-double get_text(const char*);	// Ввод текста
+double get_text(const char*);	// п▓п╡п╬п╢ я┌п╣п╨я│я┌п╟
 
-void out_text(double);		// Вывод текста
+void out_text(double);		// п▓я▀п╡п╬п╢ я┌п╣п╨я│я┌п╟
 
-double tlit_re(double);		// Преобразование русского в латинский транслит
-double tlit_er(double);		// Преобразование транслита в русский
+double tlit_re(double);		// п÷я─п╣п╬п╠я─п╟п╥п╬п╡п╟п╫п╦п╣ я─я┐я│я│п╨п╬пЁп╬ п╡ п╩п╟я┌п╦п╫я│п╨п╦п╧ я┌я─п╟п╫я│п╩п╦я┌
+double tlit_er(double);		// п÷я─п╣п╬п╠я─п╟п╥п╬п╡п╟п╫п╦п╣ я┌я─п╟п╫я│п╩п╦я┌п╟ п╡ я─я┐я│я│п╨п╦п╧
 #endif
 
 /* EOF */

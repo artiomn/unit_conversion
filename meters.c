@@ -4,7 +4,7 @@
 
 #include "meters.h"
 double cnv_mkm_mm(const double n) {
-//Микрометры в милиметры
+//п°п╦п╨я─п╬п╪п╣я┌я─я▀ п╡ п╪п╦п╩п╦п╪п╣я┌я─я▀
 	return(n/1000);
 }
 

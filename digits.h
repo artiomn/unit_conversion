@@ -10,11 +10,11 @@ double btof(const char*);	// Bin -> Double
 double otof(const char*);	// Oct -> Double
 double rtof(const char*);	// Rome -> Double
 
-void printdbl(const double);	// Печатает дробное в формате %G
-void printb(const double); 	// Печатает двоичное
-void printh(const double);	// Печатает шеснадцатеричное
-void printo(const double);	// Печатает восьмеричное
-void printr(const double);	// Печатает римское
+void printdbl(const double);	// п÷п╣я┤п╟я┌п╟п╣я┌ п╢я─п╬п╠п╫п╬п╣ п╡ я└п╬я─п╪п╟я┌п╣ %G
+void printb(const double); 	// п÷п╣я┤п╟я┌п╟п╣я┌ п╢п╡п╬п╦я┤п╫п╬п╣
+void printh(const double);	// п÷п╣я┤п╟я┌п╟п╣я┌ я┬п╣я│п╫п╟п╢я├п╟я┌п╣я─п╦я┤п╫п╬п╣
+void printo(const double);	// п÷п╣я┤п╟я┌п╟п╣я┌ п╡п╬я│я▄п╪п╣я─п╦я┤п╫п╬п╣
+void printr(const double);	// п÷п╣я┤п╟я┌п╟п╣я┌ я─п╦п╪я│п╨п╬п╣
 
 #endif
 

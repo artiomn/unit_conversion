@@ -21,11 +21,11 @@ double cnv_kalvtocels(const double kv) {
 }
 
 double cnv_kalvtofar(const double kv) {
-	return((((double)kv - 273)*9) / 5 + 32); //Сначала в Цельсий, потом в Фаренгейт
+	return((((double)kv - 273)*9) / 5 + 32); //п║п╫п╟я┤п╟п╩п╟ п╡ п╕п╣п╩я▄я│п╦п╧, п©п╬я┌п╬п╪ п╡ п╓п╟я─п╣п╫пЁп╣п╧я┌
 }
 
 double cnv_fartokalv (const double fr) {
-	return(((((double)fr - 32)*5) / 9) + 273 ); //Сначала в Цельсий, потом в Кельвин
+	return(((((double)fr - 32)*5) / 9) + 273 ); //п║п╫п╟я┤п╟п╩п╟ п╡ п╕п╣п╩я▄я│п╦п╧, п©п╬я┌п╬п╪ п╡ п п╣п╩я▄п╡п╦п╫
 }
 
 /* EOF */

@@ -10,44 +10,44 @@
 
 //////////////////////////////////////////////////
 //						//
-//		Файл конфигурации		//
+//		п╓п╟п╧п╩ п╨п╬п╫я└п╦пЁя┐я─п╟я├п╦п╦		//
 //		Configuration file		//
 //						//
 //////////////////////////////////////////////////
 
 //
-// Конфигурация, задаваемая пользователем;	User configuration
+// п п╬п╫я└п╦пЁя┐я─п╟я├п╦я▐, п╥п╟п╢п╟п╡п╟п╣п╪п╟я▐ п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩п╣п╪;	User configuration
 //
 
 
 
-#define DEF_FROM	DEC	// Откуда по умолчанию;	From by default
-#define DEF_TO		HEX	// Куда по умолчанию;	To by dfeault
+#define DEF_FROM	DEC	// п·я┌п╨я┐п╢п╟ п©п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌;	From by default
+#define DEF_TO		HEX	// п я┐п╢п╟ п©п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌;	To by dfeault
 
-#define NL_SYM		"\n"	// Символ разделителя
+#define NL_SYM		"\n"	// п║п╦п╪п╡п╬п╩ я─п╟п╥п╢п╣п╩п╦я┌п╣п╩я▐
 				// Separating symbol
 
 //
-// Конфигурация вывода для digits.c;	Output configuration for digits.c
+// п п╬п╫я└п╦пЁя┐я─п╟я├п╦я▐ п╡я▀п╡п╬п╢п╟ п╢п╩я▐ digits.c;	Output configuration for digits.c
 //
 
-#define DBL_OUT_FMT	"%G\n"	// Формат вывода чисел с плавающей точкой
+#define DBL_OUT_FMT	"%G\n"	// п╓п╬я─п╪п╟я┌ п╡я▀п╡п╬п╢п╟ я┤п╦я│п╣п╩ я│ п©п╩п╟п╡п╟я▌я┴п╣п╧ я┌п╬я┤п╨п╬п╧
 				// Output format for the floating point numbers
 
-// Следующие параметры не относятся к функции printdbl() (выводит дес. числа с плав. точкой)
+// п║п╩п╣п╢я┐я▌я┴п╦п╣ п©п╟я─п╟п╪п╣я┌я─я▀ п╫п╣ п╬я┌п╫п╬я│я▐я┌я│я▐ п╨ я└я┐п╫п╨я├п╦п╦ printdbl() (п╡я▀п╡п╬п╢п╦я┌ п╢п╣я│. я┤п╦я│п╩п╟ я│ п©п╩п╟п╡. я┌п╬я┤п╨п╬п╧)
 // Following parameters, don't affect to printdbl() function (output dec. numbers with fl. point)
 
-#define SYM_SZ		0	// Регистр символов для вывода:	0 - нижний, 1 - верхний
+#define SYM_SZ		0	// п═п╣пЁп╦я│я┌я─ я│п╦п╪п╡п╬п╩п╬п╡ п╢п╩я▐ п╡я▀п╡п╬п╢п╟:	0 - п╫п╦п╤п╫п╦п╧, 1 - п╡п╣я─я┘п╫п╦п╧
 				// Output symbols register:	0 - lowercase, 1 - uppercase
-#define OUT_PREC	10	// Число знаков, выводимых после запятой (-1 - неограниченно)
+#define OUT_PREC	10	// п╖п╦я│п╩п╬ п╥п╫п╟п╨п╬п╡, п╡я▀п╡п╬п╢п╦п╪я▀я┘ п©п╬я│п╩п╣ п╥п╟п©я▐я┌п╬п╧ (-1 - п╫п╣п╬пЁя─п╟п╫п╦я┤п╣п╫п╫п╬)
 				// Number of numerals after point (-1 - unlimited)
 
 //
-// Дополнительная кофигурация;	Additional configuration
+// п■п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╟я▐ п╨п╬я└п╦пЁя┐я─п╟я├п╦я▐;	Additional configuration
 //
 
-#define PROG_VERSION	"0.1a"	// Версия;	Program version
-#define READBUF_BUF_SZ BUFSIZ	// Длина буфера для функции, читающей строку в режиме фильтра
+#define PROG_VERSION	"0.1a"	// п▓п╣я─я│п╦я▐;	Program version
+#define READBUF_BUF_SZ BUFSIZ	// п■п╩п╦п╫п╟ п╠я┐я└п╣я─п╟ п╢п╩я▐ я└я┐п╫п╨я├п╦п╦, я┤п╦я┌п╟я▌я┴п╣п╧ я│я┌я─п╬п╨я┐ п╡ я─п╣п╤п╦п╪п╣ я└п╦п╩я▄я┌я─п╟
 				// Buf. length for the function, which read string in filter mode
 
 #endif

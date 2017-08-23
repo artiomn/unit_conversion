@@ -7,7 +7,7 @@
 #include "functions.h"
 
 double htof(const char* n) {
-//Ввод Hex->Double
+//п▓п╡п╬п╢ Hex->Double
 	register double nm = 0, nf = 0, sign = 1;
 	if (*n == '-') {
 		n++;
@@ -19,7 +19,7 @@ double htof(const char* n) {
 		n++;
 	}
 	if ('.' == *n++) {
-	//Дробная часть
+	//п■я─п╬п╠п╫п╟я▐ я┤п╟я│я┌я▄
 		register int i = 1;
 		while (isxdigit(*n)) {
 			if (isdigit(*n)) nf += (*n - '0')*pow_(16, -i);
@@ -33,7 +33,7 @@ double htof(const char* n) {
 }
 
 double btof(const char* n) {
-//Ввод Bin->Double
+//п▓п╡п╬п╢ Bin->Double
 	register double nm = 0, nf = 0, sign = 1;
 	if (*n == '-') {
 		n++;
@@ -44,7 +44,7 @@ double btof(const char* n) {
 		n++;
 	}
 	if ('.' == *n++) {
-	//Дробная часть
+	//п■я─п╬п╠п╫п╟я▐ я┤п╟я│я┌я▄
 		register int i = 1;
 		while (*n == '1' || *n == '0') {
 			nf += (*n - '0')*pow_(2, -i);
@@ -56,7 +56,7 @@ double btof(const char* n) {
 }
 
 double otof(const char* n) {
-//Ввод Oct->Double
+//п▓п╡п╬п╢ Oct->Double
 	register double nm = 0, nf = 0, sign = 1;
 	if (*n == '-') {
 		n++;
@@ -67,7 +67,7 @@ double otof(const char* n) {
 		n++;
 	}
 	if ('.' == *n++) {
-	//Дробная часть
+	//п■я─п╬п╠п╫п╟я▐ я┤п╟я│я┌я▄
 		register int i = 1;
 		while (*n >= '0' && *n <= '7') {
 			nf += (*n - '0')*pow_(8, -i);
@@ -80,37 +80,37 @@ double otof(const char* n) {
 }
 
 double rtof(const char* n) {
-//Ввод Rome->int
+//п▓п╡п╬п╢ Rome->int
 	int isromedigit(char);
 	double getrd(char);
 	register long int nm = 0;
 	register int ld, rd;
 	// i = 1, v = 5, x = 10, l = 50, c = 100, m = 1000
-	//В римских числах нет десятичных дробей
+	//п▓ я─п╦п╪я│п╨п╦я┘ я┤п╦я│п╩п╟я┘ п╫п╣я┌ п╢п╣я│я▐я┌п╦я┤п╫я▀я┘ п╢я─п╬п╠п╣п╧
 	while (isromedigit(*n)) {
-		ld = getrd(*n); //левая
+		ld = getrd(*n); //п╩п╣п╡п╟я▐
 		if (isromedigit(*++n)) {
-			//Есть пара
-			rd = getrd(*n++); //правая
+			//п∙я│я┌я▄ п©п╟я─п╟
+			rd = getrd(*n++); //п©я─п╟п╡п╟я▐
 			if (rd <= ld) nm += ld + rd;
 			else nm += rd - ld;
 		}
 		else
 		{
-			//Пара закончилась
+			//п÷п╟я─п╟ п╥п╟п╨п╬п╫я┤п╦п╩п╟я│я▄
 			if (ld <= rd) nm += ld;
-			else nm += ld - 2*rd; //rd уже была прибавлена
+			else nm += ld - 2*rd; //rd я┐п╤п╣ п╠я▀п╩п╟ п©я─п╦п╠п╟п╡п╩п╣п╫п╟
 		}
 	}
 	return((double)nm);
 }
 
 //
-// Функции вывода
+// п╓я┐п╫п╨я├п╦п╦ п╡я▀п╡п╬п╢п╟
 //
 
 void printdbl(const double nm) {
-//Печать дробного
+//п÷п╣я┤п╟я┌я▄ п╢я─п╬п╠п╫п╬пЁп╬
 	printf(DBL_OUT_FMT, nm);
 }
 
@@ -143,7 +143,7 @@ void printh(const double nm) {
 	}
 	free(ar);
 /*	register long int i = nm;
-	nm < 0 ? printf("-%X\n", -i) : printf("%X\n", i); //Целая часть
+	nm < 0 ? printf("-%X\n", -i) : printf("%X\n", i); //п╕п╣п╩п╟я▐ я┤п╟я│я┌я▄
 */
 }
 
@@ -163,8 +163,8 @@ void printo(const double nm) {
 }
 
 void printr(const double nm) {
-//Печать римского числа
-	//Int в римские
+//п÷п╣я┤п╟я┌я▄ я─п╦п╪я│п╨п╬пЁп╬ я┤п╦я│п╩п╟
+	//Int п╡ я─п╦п╪я│п╨п╦п╣
 	register int i, e;
 	register long int n = nm;
 	for (i = 0, e = n / 1000; i < e; i++) 
@@ -253,16 +253,16 @@ void printr(const double nm) {
 		#endif
 		break;
 	}
-	//В римских числах нет десятичных дробей
+	//п▓ я─п╦п╪я│п╨п╦я┘ я┤п╦я│п╩п╟я┘ п╫п╣я┌ п╢п╣я│я▐я┌п╦я┤п╫я▀я┘ п╢я─п╬п╠п╣п╧
 	fputs(NL_SYM, stdout);
 }
 
 //
-// Служебные функции
+// п║п╩я┐п╤п╣п╠п╫я▀п╣ я└я┐п╫п╨я├п╦п╦
 //
 
 double getrd(char c) {
-//Получить значение цифры римского числа
+//п÷п╬п╩я┐я┤п╦я┌я▄ п╥п╫п╟я┤п╣п╫п╦п╣ я├п╦я└я─я▀ я─п╦п╪я│п╨п╬пЁп╬ я┤п╦я│п╩п╟
 	switch(c) {
 		case 'i':
 		case 'I':
@@ -301,23 +301,23 @@ int isromedigit(char n) {
 }
 
 char* btoa(double n, char** a) {
-//Двоичные в ASCII
+//п■п╡п╬п╦я┤п╫я▀п╣ п╡ ASCII
 	size_t a_sz = 0;
-	FILE* buf_stream = (FILE*) open_memstream(a, &a_sz); // Работа через строковые потоки
-	register long int nm = n; // Целая часть
-	register double f = n - nm; // Дробная часть
+	FILE* buf_stream = (FILE*) open_memstream(a, &a_sz); // п═п╟п╠п╬я┌п╟ я┤п╣я─п╣п╥ я│я┌я─п╬п╨п╬п╡я▀п╣ п©п╬я┌п╬п╨п╦
+	register long int nm = n; // п╕п╣п╩п╟я▐ я┤п╟я│я┌я▄
+	register double f = n - nm; // п■я─п╬п╠п╫п╟я▐ я┤п╟я│я┌я▄
 	do {
-	// Целая часть
+	// п╕п╣п╩п╟я▐ я┤п╟я│я┌я▄
 		putc(nm%2 + '0', buf_stream);
 	} while ((nm /= 2) > 0);
-	putc((char) NULL, buf_stream); // Чтобы правильно сработала функция реверса
-	fflush(buf_stream); // Сброс в строку для работы с ней
-	reverse(*a); // Реверсирование
-	#if OUT_PREC != 0 // Если точность равна 0, то с дробной частью не работаю
+	putc((char) NULL, buf_stream); // п╖я┌п╬п╠я▀ п©я─п╟п╡п╦п╩я▄п╫п╬ я│я─п╟п╠п╬я┌п╟п╩п╟ я└я┐п╫п╨я├п╦я▐ я─п╣п╡п╣я─я│п╟
+	fflush(buf_stream); // п║п╠я─п╬я│ п╡ я│я┌я─п╬п╨я┐ п╢п╩я▐ я─п╟п╠п╬я┌я▀ я│ п╫п╣п╧
+	reverse(*a); // п═п╣п╡п╣я─я│п╦я─п╬п╡п╟п╫п╦п╣
+	#if OUT_PREC != 0 // п∙я│п╩п╦ я┌п╬я┤п╫п╬я│я┌я▄ я─п╟п╡п╫п╟ 0, я┌п╬ я│ п╢я─п╬п╠п╫п╬п╧ я┤п╟я│я┌я▄я▌ п╫п╣ я─п╟п╠п╬я┌п╟я▌
 	if (f - (int) f > 0) {
-	// Дробная часть, если есть
-		fseek(buf_stream, strlen(*a), SEEK_SET); // На позицию NULL символа
-		putc('.', buf_stream); // Вместо NULL символа
+	// п■я─п╬п╠п╫п╟я▐ я┤п╟я│я┌я▄, п╣я│п╩п╦ п╣я│я┌я▄
+		fseek(buf_stream, strlen(*a), SEEK_SET); // п²п╟ п©п╬п╥п╦я├п╦я▌ NULL я│п╦п╪п╡п╬п╩п╟
+		putc('.', buf_stream); // п▓п╪п╣я│я┌п╬ NULL я│п╦п╪п╡п╬п╩п╟
 		register int i = 0;
 		while ((f - (int)f > 0)
 		#if OUT_PREC > 0
@@ -337,13 +337,13 @@ char* btoa(double n, char** a) {
 }
 
 char* otoa(double n, char** a) {
-//Восьмеричные в ASCII
+//п▓п╬я│я▄п╪п╣я─п╦я┤п╫я▀п╣ п╡ ASCII
 	size_t a_sz = 0;
 	FILE* buf_stream = (FILE*) open_memstream(a, &a_sz);
 	register long int nm = n;
 	register double f = n - nm;
 	do {
-	// Целая часть
+	// п╕п╣п╩п╟я▐ я┤п╟я│я┌я▄
 		putc(nm%8 + '0', buf_stream);
 	} while ((nm /= 8) > 0);
 	putc((char) NULL, buf_stream);
@@ -351,7 +351,7 @@ char* otoa(double n, char** a) {
 	reverse(*a);
 	#if OUT_PREC != 0
 	if (f - (int) f > 0) {
-	// Дробная часть, если есть
+	// п■я─п╬п╠п╫п╟я▐ я┤п╟я│я┌я▄, п╣я│п╩п╦ п╣я│я┌я▄
 		fseek(buf_stream, strlen(*a), SEEK_SET);
 		putc('.', buf_stream);
 		register int i = 0;
@@ -373,13 +373,13 @@ char* otoa(double n, char** a) {
 }
 
 char* htoa(double n, char** a) {
-//Шеснадцатеричные в ASCII
+//п╗п╣я│п╫п╟п╢я├п╟я┌п╣я─п╦я┤п╫я▀п╣ п╡ ASCII
 	size_t a_sz = 0;
 	FILE* buf_stream = (FILE*) open_memstream(a, &a_sz);
 	register long int nm = n;
 	register double f = n - nm;
 	do {
-	// Целая часть
+	// п╕п╣п╩п╟я▐ я┤п╟я│я┌я▄
 		register int tmp;
 		tmp = nm%16;
 		if (tmp <= 9) putc(tmp + '0', buf_stream);
@@ -394,7 +394,7 @@ char* htoa(double n, char** a) {
 	reverse(*a);
 	#if OUT_PREC != 0
 	if (f - (int)f > 0) {
-	// Дробная часть, если есть
+	// п■я─п╬п╠п╫п╟я▐ я┤п╟я│я┌я▄, п╣я│п╩п╦ п╣я│я┌я▄
 		fseek(buf_stream, strlen(*a), SEEK_SET);
 		putc('.', buf_stream);
 		register int i = 0;

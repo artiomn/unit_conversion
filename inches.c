@@ -5,7 +5,7 @@
 #include "inches.h"
 
 double cnv_dm_ft(const double n) {
-//äÀÊÍÙ × ÆÕÔÙ
+//Ğ”ÑĞ¹Ğ¼Ñ‹ Ğ² Ñ„ÑƒÑ‚Ñ‹
 	return(n/12);
 }
 
@@ -18,7 +18,7 @@ double cnv_dm_ml(const double n) {
 }
 
 double cnv_ft_dm(const double n) {
-//æÕÔÙ × ÄÀÊÍÙ
+//Ğ¤ÑƒÑ‚Ñ‹ Ğ² Ğ´ÑĞ¹Ğ¼Ñ‹
 	return(n*12);
 }
 
@@ -31,7 +31,7 @@ double cnv_ft_ml(const double n) {
 }
 
 double cnv_yd_dm(const double n) {
-//ñÒÄÙ × ÄÀÊÍÙ
+//Ğ¯Ñ€Ğ´Ñ‹ Ğ² Ğ´ÑĞ¹Ğ¼Ñ‹
 	return(n*36);
 }
 
@@ -44,7 +44,7 @@ double cnv_yd_ml(const double n) {
 }
 
 double cnv_ml_dm(const double n) {
-//íÉÌÉ × ÄÀÊÍÙ
+//ĞœĞ¸Ğ»Ğ¸ Ğ² Ğ´ÑĞ¹Ğ¼Ñ‹
 	return(n*63360);
 }
 

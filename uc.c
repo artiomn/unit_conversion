@@ -33,35 +33,35 @@
 #include "convarray.h"
 #include "functions.h"
 
-char* pin; //Имя программы
+char* pin; //п≤п╪я▐ п©я─п╬пЁя─п╟п╪п╪я▀
 
 main(int argc, char **argv, char **env) {
 	register int from_c = DEF_FROM, to_c = DEF_TO,
-	flmode = 1, //Режим фильтра
-	quiet = 0; //0 - подсказка, 1 - тихо, 2 - уже выведена
-	char buf[READBUF_BUF_SZ]; // Сюда читаю строку в режиме фильтра
+	flmode = 1, //п═п╣п╤п╦п╪ я└п╦п╩я▄я┌я─п╟
+	quiet = 0; //0 - п©п╬п╢я│п╨п╟п╥п╨п╟, 1 - я┌п╦я┘п╬, 2 - я┐п╤п╣ п╡я▀п╡п╣п╢п╣п╫п╟
+	char buf[READBUF_BUF_SZ]; // п║я▌п╢п╟ я┤п╦я┌п╟я▌ я│я┌я─п╬п╨я┐ п╡ я─п╣п╤п╦п╪п╣ я└п╦п╩я▄я┌я─п╟
 
-	int convert(const int, const int, const char*); //"Движок"
+	int convert(const int, const int, const char*); //"п■п╡п╦п╤п╬п╨"
 	int get_type(const char*);
 	int readbuf(char*, size_t);
 	void exit_ft();
 
 	atexit(exit_ft);
-	pin = (char*) alloca(strlen(basename(*argv) + 1)); // Имя программы (extern)
+	pin = (char*) alloca(strlen(basename(*argv) + 1)); // п≤п╪я▐ п©я─п╬пЁя─п╟п╪п╪я▀ (extern)
 	pin = basename(*argv);
 
 	errno = 0;
 	while (--argc > 0) {
-	// Цикл обработки параметров
+	// п╕п╦п╨п╩ п╬п╠я─п╟п╠п╬я┌п╨п╦ п©п╟я─п╟п╪п╣я┌я─п╬п╡
 		argv++;
 		if (**argv == '-' && !isdigit(*((*argv) + 1))) {
-			// Параметр
+			// п÷п╟я─п╟п╪п╣я┌я─
 			(*argv)++;
 			if (quiet != 1) quiet = 0;
 		}
 		else {
-			// Значение
-			flmode = 0; //В параметрах значение - выключаю режим фильтра
+			// п≈п╫п╟я┤п╣п╫п╦п╣
+			flmode = 0; //п▓ п©п╟я─п╟п╪п╣я┌я─п╟я┘ п╥п╫п╟я┤п╣п╫п╦п╣ - п╡я▀п╨п╩я▌я┤п╟я▌ я─п╣п╤п╦п╪ я└п╦п╩я▄я┌я─п╟
 			if (!quiet) {
 				fprintf(stderr, "%s -> %s\n", code_names[from_c], code_names[to_c]);
 				quiet = 2;
@@ -69,18 +69,18 @@ main(int argc, char **argv, char **env) {
 			if (convert(from_c, to_c, *argv) == -1) err_ft(2);
 			continue;
 		}
-		// Не цифра и '-' впереди - это параметр
+		// п²п╣ я├п╦я└я─п╟ п╦ '-' п╡п©п╣я─п╣п╢п╦ - я█я┌п╬ п©п╟я─п╟п╪п╣я┌я─
 		while (**argv != (char)NULL)
 		switch(**argv) {
-			case 'f': // откуда
+			case 'f': // п╬я┌п╨я┐п╢п╟
 			(*argv)++;
 			if ((from_c = get_type(*argv)) == -1) err_ft(3);
 			**argv = (char)NULL;
 			break;
-			case 'h': // помощь
+			case 'h': // п©п╬п╪п╬я┴я▄
 			err_ft(0);
 			break;
-			case 't': // куда
+			case 't': // п╨я┐п╢п╟
 			(*argv)++;
 			if ((to_c = get_type(*argv)) == -1) err_ft(3);
 			**argv = (char)NULL;
@@ -94,13 +94,13 @@ main(int argc, char **argv, char **env) {
 				exit(1);
 			break;
 			default:
-				fprintf(stderr, "-%c - ", **argv); // Неизвестный параметр
+				fprintf(stderr, "-%c - ", **argv); // п²п╣п╦п╥п╡п╣я│я┌п╫я▀п╧ п©п╟я─п╟п╪п╣я┌я─
 				err_ft(4);
 		}
 	}
 
 	if (flmode) {
-	//Режим фильтра
+	//п═п╣п╤п╦п╪ я└п╦п╩я▄я┌я─п╟
 		if (!quiet) fprintf(stderr, "%s -> %s\n", code_names[from_c], code_names[to_c]);
 		while (readbuf(buf, READBUF_BUF_SZ) > -1) {
 			if (strlen(buf) == 0) continue;
@@ -110,11 +110,11 @@ main(int argc, char **argv, char **env) {
 }
 
 //
-// Служебные функции
+// п║п╩я┐п╤п╣п╠п╫я▀п╣ я└я┐п╫п╨я├п╦п╦
 //
 
 int get_type(const char* p) {
-//Номер преобразования из argv
+//п²п╬п╪п╣я─ п©я─п╣п╬п╠я─п╟п╥п╬п╡п╟п╫п╦я▐ п╦п╥ argv
 	register int i = 0;
 	while (code_names[i]&&strcmp(code_names[i], p)) {
 		i++;
@@ -124,15 +124,15 @@ int get_type(const char* p) {
 }
 
 int convert(const int f, const int t, const char* c) {
-//Движок :-)
+//п■п╡п╦п╤п╬п╨ :-)
 	register double num;
 	if (carr[f][t].f_inp) {
-		num = carr[f][t].f_inp(c); // Ввод
-		if (carr[f][t].f_cnv != NULL) num = carr[f][t].f_cnv(num); // Преобразование
-		carr[f][t].f_out(num); // Вывод
+		num = carr[f][t].f_inp(c); // п▓п╡п╬п╢
+		if (carr[f][t].f_cnv != NULL) num = carr[f][t].f_cnv(num); // п÷я─п╣п╬п╠я─п╟п╥п╬п╡п╟п╫п╦п╣
+		carr[f][t].f_out(num); // п▓я▀п╡п╬п╢
 	}
 	else {
-	// Если ф-ция ввода не задана, преобразование неопределено
+	// п∙я│п╩п╦ я└-я├п╦я▐ п╡п╡п╬п╢п╟ п╫п╣ п╥п╟п╢п╟п╫п╟, п©я─п╣п╬п╠я─п╟п╥п╬п╡п╟п╫п╦п╣ п╫п╣п╬п©я─п╣п╢п╣п╩п╣п╫п╬
 		fprintf(stderr, "Convertion not defined...\n");
 		/*num = dumbin(c);
 		dumbout(num);*/
@@ -143,7 +143,7 @@ int convert(const int f, const int t, const char* c) {
 }
 
 int readbuf(char* buf, size_t b_sz) {
-	// getline - слишком GNUтая
+	// getline - я│п╩п╦я┬п╨п╬п╪ GNUя┌п╟я▐
 	register char c;
 	register int i = 0;
 	while (((c = getchar()) != '\n') && (c != EOF) && (c != (char)NULL) && (i < b_sz)) {
@@ -154,7 +154,7 @@ int readbuf(char* buf, size_t b_sz) {
 	return(i);
 }
 
-// Жарко сегодня... (Втр Июн 20 17:32:31 MSD 2006)
+// п√п╟я─п╨п╬ я│п╣пЁп╬п╢п╫я▐... (п▓я┌я─ п≤я▌п╫ 20 17:32:31 MSD 2006)
 
 void exit_ft() {
 

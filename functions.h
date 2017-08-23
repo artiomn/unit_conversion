@@ -6,26 +6,26 @@
 #define FUNCS_H
 
 //
-// Включаемые файлы конфигурации
+// п▓п╨п╩я▌я┤п╟п╣п╪я▀п╣ я└п╟п╧п╩я▀ п╨п╬п╫я└п╦пЁя┐я─п╟я├п╦п╦
 //
 
 #include "config.h"
 
 //
-// Функции "на вынос"
+// п╓я┐п╫п╨я├п╦п╦ "п╫п╟ п╡я▀п╫п╬я│"
 //
 
-#define sg(a) ((a) < 0 ? -1 : 1)	// Знак
-#define myabs(a) (a) < 0 ? -(a) : (a)	// abs() для значения любого типа
+#define sg(a) ((a) < 0 ? -1 : 1)	// п≈п╫п╟п╨
+#define myabs(a) (a) < 0 ? -(a) : (a)	// abs() п╢п╩я▐ п╥п╫п╟я┤п╣п╫п╦я▐ п╩я▌п╠п╬пЁп╬ я┌п╦п©п╟
 
-extern char* pin;				// Имя программы
+extern char* pin;				// п≤п╪я▐ п©я─п╬пЁя─п╟п╪п╪я▀
 long int modi(const double, long int*, int*);	// 
-long int pow10(long int);			// 10 в степени n
-double pow_(double base, int power);	// Степень
-char* reverse(char*);				// Переворачивает строку
-void err_ft(int) __attribute__ ((noreturn));	// Вывод ошибки и выход с EXIT_FAILURE
-void* xmalloc(size_t);				// Распределение памяти с проверкой
-void usage();					// Вывод справки
+long int pow10(long int);			// 10 п╡ я│я┌п╣п©п╣п╫п╦ n
+double pow_(double base, int power);	// п║я┌п╣п©п╣п╫я▄
+char* reverse(char*);				// п÷п╣я─п╣п╡п╬я─п╟я┤п╦п╡п╟п╣я┌ я│я┌я─п╬п╨я┐
+void err_ft(int) __attribute__ ((noreturn));	// п▓я▀п╡п╬п╢ п╬я┬п╦п╠п╨п╦ п╦ п╡я▀я┘п╬п╢ я│ EXIT_FAILURE
+void* xmalloc(size_t);				// п═п╟я│п©я─п╣п╢п╣п╩п╣п╫п╦п╣ п©п╟п╪я▐я┌п╦ я│ п©я─п╬п╡п╣я─п╨п╬п╧
+void usage();					// п▓я▀п╡п╬п╢ я│п©я─п╟п╡п╨п╦
 
 #endif
 

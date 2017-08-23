@@ -8,7 +8,7 @@
 #include "convarray.h"
 
 long int pow10(long int n) {
-// Возвращает 10 в степени n (целое положительное)
+// п▓п╬п╥п╡я─п╟я┴п╟п╣я┌ 10 п╡ я│я┌п╣п©п╣п╫п╦ n (я├п╣п╩п╬п╣ п©п╬п╩п╬п╤п╦я┌п╣п╩я▄п╫п╬п╣)
 	long int nm = 10;
 	if (!n) return(1);
 	while ((--n) > 0) nm *= 10;
@@ -16,12 +16,12 @@ long int pow10(long int n) {
 }
 
 double pow_(double base, int power) {
-// Возвращает base в степени power
+// п▓п╬п╥п╡я─п╟я┴п╟п╣я┌ base п╡ я│я┌п╣п©п╣п╫п╦ power
 	register int pw = myabs(power);
 	register double f_base = 1;
 	if (!power) return(1);
-	if (pw % 2 != 0) pw--, f_base = base; // Если степень нечётная
-	while (pw > 1) base *= base, pw /= 2; // a^k = (a^2)^(k/2), для сокращения числа операций
+	if (pw % 2 != 0) pw--, f_base = base; // п∙я│п╩п╦ я│я┌п╣п©п╣п╫я▄ п╫п╣я┤я▒я┌п╫п╟я▐
+	while (pw > 1) base *= base, pw /= 2; // a^k = (a^2)^(k/2), п╢п╩я▐ я│п╬п╨я─п╟я┴п╣п╫п╦я▐ я┤п╦я│п╩п╟ п╬п©п╣я─п╟я├п╦п╧
 	f_base *= base;
 	if (power < 0) f_base = 1/f_base;
 	return(f_base);
@@ -29,7 +29,7 @@ double pow_(double base, int power) {
 }
 
 char* reverse(char* n) {
-// Переворачивает строку
+// п÷п╣я─п╣п╡п╬я─п╟я┤п╦п╡п╟п╣я┌ я│я┌я─п╬п╨я┐
 	register int i, j;
 	register char c;
 	for (i = 0, j = strlen(n) - 1; i < j;i++, j--) {
@@ -41,9 +41,9 @@ char* reverse(char* n) {
 }
 
 void err_ft(int err_num) {
-// Выводит ошибку и выходит
+// п▓я▀п╡п╬п╢п╦я┌ п╬я┬п╦п╠п╨я┐ п╦ п╡я▀я┘п╬п╢п╦я┌
 	switch (err_num) {
-		case 0: usage(); //При нормальной работе вызова usage() не происходит.
+		case 0: usage(); //п÷я─п╦ п╫п╬я─п╪п╟п╩я▄п╫п╬п╧ я─п╟п╠п╬я┌п╣ п╡я▀п╥п╬п╡п╟ usage() п╫п╣ п©я─п╬п╦я│я┘п╬п╢п╦я┌.
 		break;
 		case 1: fprintf(stderr, "Memory allocation error\n");
 		break;
@@ -63,25 +63,25 @@ void err_ft(int err_num) {
 }
 
 void* xmalloc(size_t sz) {
-// frontend к malloc
+// frontend п╨ malloc
 	register void *ptr = malloc(sz);
 	if (ptr == 0) err_ft(1);
 	return(ptr);
 }
 
 void usage() {
-// Справка
+// п║п©я─п╟п╡п╨п╟
 	register int i = 0;
 	while (code_names[i++] != NULL);
-	// Выделение под размер массива+число элементов*2 (для каждой " ,")
+	// п▓я▀п╢п╣п╩п╣п╫п╦п╣ п©п╬п╢ я─п╟п╥п╪п╣я─ п╪п╟я│я│п╦п╡п╟+я┤п╦я│п╩п╬ я█п╩п╣п╪п╣п╫я┌п╬п╡*2 (п╢п╩я▐ п╨п╟п╤п╢п╬п╧ " ,")
 	char *pstr = (char*)xmalloc(sizeof(code_names) + 2*i); 
 	i = 0;
 	while (code_names[i] != NULL) {
-	// Создаёт строку с вариантами преобразования, взятыми из массива опций
+	// п║п╬п╥п╢п╟я▒я┌ я│я┌я─п╬п╨я┐ я│ п╡п╟я─п╦п╟п╫я┌п╟п╪п╦ п©я─п╣п╬п╠я─п╟п╥п╬п╡п╟п╫п╦я▐, п╡п╥я▐я┌я▀п╪п╦ п╦п╥ п╪п╟я│я│п╦п╡п╟ п╬п©я├п╦п╧
 		strcat(pstr, code_names[i++]);
 		strcat(pstr, ", ");
 	}
-	pstr[strlen(pstr) - 2] = (char)NULL; //Последний ", "
+	pstr[strlen(pstr) - 2] = (char)NULL; //п÷п╬я│п╩п╣п╢п╫п╦п╧ ", "
 	printf("Usage: %s [-f{from_units}] [-t{to_units}] [-q] [-v] [value_1 value_2 ... value_n]\n\
 -h - this help\n-q - quiet\n-v - verbose (cancel -q)\n-V - version\n\
 Supported convertion units: %s\n", \
